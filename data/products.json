@@ -1,0 +1,376 @@
+[
+  {
+    "id": "xpower",
+    "name": "Orio X-Power",
+    "accent": "#7B1E2B",
+    "img": "/static/img/xpower.jpg",
+    "tag": "Natural Energy for Men · Shilajit & Swarn Bhasmi",
+    "short": "Strength, stamina and vitality — a 20-herb classical formula anchored by Shudh Shilajit and Swarn Bhasma (calcined aurum).",
+    "long": "A premium men's health formulation combining Shudh Shilajit and Swarn Bhasma with a full spectrum of classical rasayana herbs. Improves physical strength and endurance, enhances energy and reduces fatigue, boosts vitality and overall performance, and supports immunity and men's health.",
+    "price": 910,
+    "pack": "30 Capsules",
+    "dosage": "1–2 capsules twice a day, or as directed by the physician",
+    "benefits": [
+      "Strength — improves physical strength & endurance",
+      "Stamina — enhances energy & reduces fatigue",
+      "Power — boosts vitality & overall performance",
+      "Immunity — supports immunity & men's health"
+    ],
+    "ingredients": [
+      [
+        "Kesar (Crocus sativus)",
+        ""
+      ],
+      [
+        "Swarn Bhasma (Calcined aurum)",
+        ""
+      ],
+      [
+        "Shudh Shilajit",
+        ""
+      ],
+      [
+        "Safed Musli (Asparagus adescendens)",
+        ""
+      ],
+      [
+        "Kaunch (Mucuna pruriens)",
+        ""
+      ],
+      [
+        "Ashwagandha (Withania somnifera)",
+        ""
+      ],
+      [
+        "Gokshura (Tribulus terrestris)",
+        ""
+      ],
+      [
+        "Akarkara (Anacyclus pyrethrum)",
+        ""
+      ],
+      [
+        "Amla (Emblica officinale)",
+        ""
+      ],
+      [
+        "Shatavari (Asparagus racemosus)",
+        ""
+      ],
+      [
+        "Guduchi (Tinospora cordifolia)",
+        ""
+      ],
+      [
+        "Mashi (Phaseolus mungo)",
+        ""
+      ],
+      [
+        "Makhiana (Euryale ferox)",
+        ""
+      ],
+      [
+        "Kolilakshi (Asteracantha longifolia)",
+        ""
+      ],
+      [
+        "Jaiphal (Myristica fragrans)",
+        ""
+      ],
+      [
+        "Supari (Areca catechu)",
+        ""
+      ],
+      [
+        "Vachi (Acorus calamus)",
+        ""
+      ],
+      [
+        "Pippali (Piper longum)",
+        ""
+      ],
+      [
+        "Tagar (Valeriana wallichii)",
+        ""
+      ],
+      [
+        "Mulethi (Glycyrrhiza glabra)",
+        ""
+      ]
+    ],
+    "indications": "General debility, low stamina, fatigue, and men's wellness support.",
+    "caution": "An Ayurvedic proprietary medicine. To be taken under medical supervision."
+  },
+  {
+    "id": "zenarsh",
+    "name": "ZenArsh",
+    "accent": "#E07B1A",
+    "img": "/static/img/zenarsh.jpg",
+    "tag": "Natural Relief for Piles Care",
+    "short": "Helps control bleeding piles — relieves burning and itching, softens stools, and supports the healing of fissures and wounds.",
+    "long": "A targeted Ayurvedic formulation for piles and fissure care. Relieves burning, itching and discomfort, softens stools and improves bowel movement, supports healing of anal fissures, and helps in anal fissure and fissure pain. Promotes healing of fissures and wounds.",
+    "price": 290,
+    "pack": "30 Capsules",
+    "dosage": "1–2 capsules twice a day, or as directed by the physician",
+    "benefits": [
+      "Relieves burning, itching & discomfort",
+      "Softens stools and improves bowel movement",
+      "Supports healing of anal fissures",
+      "Helps in anal fissure & fissure pain"
+    ],
+    "ingredients": [
+      [
+        "Kumari",
+        "200 mg"
+      ],
+      [
+        "Sarnai",
+        "200 mg"
+      ],
+      [
+        "Khadir",
+        "100 mg"
+      ],
+      [
+        "Kabila",
+        "100 mg"
+      ],
+      [
+        "Amla",
+        "100 mg"
+      ],
+      [
+        "Harad",
+        "100 mg"
+      ],
+      [
+        "Behara",
+        "100 mg"
+      ],
+      [
+        "Rasna",
+        "100 mg"
+      ]
+    ],
+    "indications": "Bleeding piles · Itching & irritation · Pain & discomfort · Anal fissures · Constipation & hard stools",
+    "caution": "To be taken under medical supervision. An Ayurvedic Proprietary Medicine, Mfg. Lic. No. 649 PB (AY)."
+  },
+  {
+    "id": "livfit",
+    "name": "Zen Liv-Fit",
+    "accent": "#1F4FA0",
+    "img": "/static/img/livfit.jpg",
+    "tag": "Digestive Capsules · Strong Liver, Better Digestion, Better Life",
+    "short": "A 15-herb liver formula for fatty liver, hepatitis recovery, detoxification and better digestion.",
+    "long": "Comprehensive liver support: helps reduce fat accumulation in the liver, supports liver health and post-hepatitis recovery, helps remove toxins, and improves digestion and nutrient absorption. Useful in hepatitis and jaundice, and promotes overall vitality and wellness.",
+    "price": 290,
+    "pack": "30 Capsules",
+    "dosage": "1–2 capsules twice a day, or as directed by the physician",
+    "benefits": [
+      "Fatty liver — helps reduce fat accumulation in the liver",
+      "Hepatitis & post-hepatitis liver recovery",
+      "Liver detoxification — helps remove toxins",
+      "Better digestion — improves digestion & nutrient absorption",
+      "Improves appetite, useful in jaundice, promotes overall vitality"
+    ],
+    "ingredients": [
+      [
+        "Kutki",
+        "60 mg"
+      ],
+      [
+        "Bhui Amla",
+        "55 mg"
+      ],
+      [
+        "Haritaki",
+        "50 mg"
+      ],
+      [
+        "Bhringraj",
+        "50 mg"
+      ],
+      [
+        "Rohitak",
+        "45 mg"
+      ],
+      [
+        "Chirata",
+        "40 mg"
+      ],
+      [
+        "Punarnava",
+        "40 mg"
+      ],
+      [
+        "Kalmegh",
+        "40 mg"
+      ],
+      [
+        "Mandur Bhasam",
+        "20 mg"
+      ],
+      [
+        "Giloy",
+        "20 mg"
+      ],
+      [
+        "Loh Bhasam",
+        "20 mg"
+      ],
+      [
+        "Makoy",
+        "20 mg"
+      ],
+      [
+        "Anatmool",
+        "15 mg"
+      ],
+      [
+        "Ajwain",
+        "15 mg"
+      ],
+      [
+        "Pippali",
+        "10 mg"
+      ]
+    ],
+    "indications": "Fatty liver · Hepatitis & jaundice · Poor digestion & appetite · Liver detoxification and metabolic support",
+    "caution": "To be taken under medical supervision. An Ayurvedic Proprietary Medicine, Mfg. Lic. No. 649 PB (AY)."
+  },
+  {
+    "id": "leuco",
+    "name": "Leuco D-90",
+    "accent": "#1E6F72",
+    "img": "/static/img/leuco.jpg",
+    "tag": "Helps Balance Female Hormones",
+    "short": "Traditional support for white discharge, uterine health and hormonal balance — soothes irritation and odour.",
+    "long": "A women's wellness formulation offering traditional support for leucorrhoea. Reduces white discharge, supports uterine health, helps balance female hormones, and soothes irritation and odour. Addresses weakness, fatigue or body ache and burning sensation, especially during urination.",
+    "price": 290,
+    "pack": "30 Capsules",
+    "dosage": "1–2 capsules thrice a day, or as directed by the physician",
+    "benefits": [
+      "Reduces white discharge & bad smell",
+      "Supports uterine health",
+      "Balances female hormones",
+      "Soothes itching & irritation in the vaginal area",
+      "Helps with weakness, fatigue or body ache",
+      "Eases burning sensation, especially during urination"
+    ],
+    "ingredients": [
+      [
+        "Sakhu (Shorea robusta)",
+        "120 mg"
+      ],
+      [
+        "Isbegol (Plantago ovata)",
+        "120 mg"
+      ],
+      [
+        "Mauphal (Quercus infectoria)",
+        "80 mg"
+      ],
+      [
+        "Lodhra (Symplocos racemosa)",
+        "80 mg"
+      ],
+      [
+        "Trivang Bhasma",
+        "70 mg"
+      ],
+      [
+        "Loh Bhasma",
+        "70 mg"
+      ],
+      [
+        "Kukudkandha Bhasma",
+        "70 mg"
+      ],
+      [
+        "Khadir (Acacia catechu)",
+        "70 mg"
+      ],
+      [
+        "Pardantak Loh",
+        "70 mg"
+      ]
+    ],
+    "indications": "Bad smell & white discharge · Itching & irritation · Weakness, fatigue or body ache · Burning sensation during urination",
+    "caution": "To be taken under medical supervision. An Ayurvedic Proprietary Medicine, Mfg. Lic. No. 649 PB (AY)."
+  },
+  {
+    "id": "zenstone",
+    "name": "Zen Stone D-80",
+    "accent": "#7A5A1E",
+    "img": "/static/img/zenstone.jpg",
+    "tag": "Powerful Ayurvedic Support for Kidney Health",
+    "short": "Helps dissolve kidney stones and flush them out naturally, while supporting kidney function and reducing recurrence.",
+    "long": "An Ayurvedic proprietary medicine that helps in dissolving kidney stones and their recurrence. Helps break down kidney stones into small pieces and flush them out, supports kidney function and cleansing, and offers support in urinary tract infection.",
+    "price": 290,
+    "pack": "30 Capsules",
+    "dosage": "1–2 capsules twice a day, or as directed by the physician",
+    "benefits": [
+      "Helps in dissolving kidney stones",
+      "Helps flush out stones naturally",
+      "Supports kidney function & cleanse",
+      "Helps reduce recurrence of stones",
+      "Support in urinary tract infection"
+    ],
+    "ingredients": [
+      [
+        "Pashanbhed (Bergenia ciliata) rhizome",
+        "75 mg"
+      ],
+      [
+        "Varuna (Crateava nurvala) bark",
+        "70 mg"
+      ],
+      [
+        "Kulatha (Dolichos biflorus) seed",
+        "60 mg"
+      ],
+      [
+        "Gokshura (Tribulus terrestris) fruit",
+        "40 mg"
+      ],
+      [
+        "Punarnava (Boerhaavia diffusa) root",
+        "35 mg"
+      ],
+      [
+        "Bhumi Amla (Phyllanthus niruri) root",
+        "35 mg"
+      ],
+      [
+        "Kharbuj (Cucumis melo) seeds",
+        "30 mg"
+      ],
+      [
+        "Gajar Beej (Daucus carota) seed",
+        "30 mg"
+      ],
+      [
+        "Nagarmotha (Cyperus rotundus) rhizome",
+        "30 mg"
+      ],
+      [
+        "Kamarkas (Butea monosperma) gum",
+        "25 mg"
+      ],
+      [
+        "Kalmi Shora (Potassium nitrate) powder",
+        "25 mg"
+      ],
+      [
+        "Guduchi (Tinospora cordifolia) stem",
+        "25 mg"
+      ],
+      [
+        "Ajowain (Trachyspermum ammi) seed",
+        "20 mg"
+      ]
+    ],
+    "indications": "Kidney stone · Burning micturition · Urinary infection · Pain & discomfort in urination",
+    "caution": "Each 500 mg capsule contains processed extract. To be taken under medical supervision. Mfg. Lic. No. 649 PB (AY)."
+  }
+]
