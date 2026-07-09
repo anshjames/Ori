@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORIOZEN — Ayurvedic Apothecary | 100% Ayurvedic & Natural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FFFFFF; --ivory:#FBFAF7; --ink:#20241F;
+  --green:#1E3A2F; --green-deep:#14291F;
+  --gold:#B08D4F; --gold-soft:#C9A96A;
+  --hair:#E9E5DC; --muted:#6E6F68;
+  --font-display:'Cormorant Garamond', Georgia, serif;
+  --font-body:'Archivo', 'Helvetica Neue', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--white);color:var(--ink);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font-family:var(--font-body)}
+button{cursor:pointer}
+::selection{background:var(--green);color:var(--white)}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--gold)}
+.serif{font-family:var(--font-display)}
+
+.announce{background:var(--green-deep);color:#EDE7D8;text-align:center;font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:9px 16px}
+.announce b{color:var(--gold-soft);font-weight:500}
+
+nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
+.nav-in{max-width:1240px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:18px 32px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo-mark{font-family:var(--font-display);font-size:26px;font-weight:600;letter-spacing:.14em;color:var(--green)}
+.logo-sub{font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.nav-links{display:flex;gap:34px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:400}
+.nav-links a{padding:4px 0;border-bottom:1px solid transparent;transition:border-color .25s}
+.nav-links a:hover,.nav-links a:focus-visible{border-color:var(--gold)}
+.cart-btn{position:relative;background:none;border:1px solid var(--green);color:var(--green);padding:9px 22px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;transition:.25s}
+.cart-btn:hover{background:var(--green);color:var(--white)}
+.cart-count{position:absolute;top:-9px;right:-9px;background:var(--gold);color:#fff;width:20px;height:20px;border-radius:50%;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:600}
+
+.hero{max-width:1240px;margin:auto;padding:88px 32px 96px;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.hero h1{font-family:var(--font-display);font-weight:500;font-size:clamp(44px,5.6vw,76px);line-height:1.04;color:var(--ink);margin:22px 0 26px}
+.hero h1 em{font-style:italic;color:var(--green)}
+.hero p{max-width:52ch;color:var(--muted);font-size:16px}
+.hero-cta{margin-top:38px;display:flex;gap:18px;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 36px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;border:1px solid var(--green);transition:.25s;background:var(--green);color:#fff;font-weight:400}
+.btn:hover{background:var(--green-deep)}
+.btn.ghost{background:transparent;color:var(--green)}
+.btn.ghost:hover{background:var(--green);color:#fff}
+.btn[disabled]{opacity:.5;cursor:wait}
+.hero-cred{margin-top:46px;display:flex;gap:36px;border-top:1px solid var(--hair);padding-top:26px}
+.cred b{display:block;font-family:var(--font-display);font-size:24px;font-weight:600;color:var(--green)}
+.cred span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.alcove{position:relative;background:linear-gradient(175deg,var(--ivory),#F3F0E8);border:1px solid var(--hair);height:640px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:34px}
+.alcove::before{content:"";position:absolute;inset:22px;border:1px solid rgba(176,141,79,.35);pointer-events:none;z-index:3}
+.alcove-img{max-height:100%;max-width:100%;object-fit:contain;position:relative;z-index:2;box-shadow:0 30px 60px rgba(20,41,31,.22)}
+
+.strip{background:var(--green);color:#E9E3D2;overflow:hidden;padding:14px 0;border-top:1px solid var(--green-deep)}
+.strip-track{display:flex;gap:64px;white-space:nowrap;font-size:11px;letter-spacing:.26em;text-transform:uppercase;animation:slide 30s linear infinite;width:max-content}
+.strip-track span::before{content:"✦";color:var(--gold-soft);margin-right:64px}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.strip-track{animation:none}}
+
+section{max-width:1240px;margin:auto;padding:96px 32px}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;gap:24px;flex-wrap:wrap}
+.sec-head h2{font-family:var(--font-display);font-weight:500;font-size:clamp(32px,3.6vw,48px);color:var(--ink);line-height:1.1;margin-top:14px}
+.sec-head p{max-width:44ch;color:var(--muted);font-size:14px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair)}
+.card{background:var(--white);padding:34px 30px 30px;display:flex;flex-direction:column;transition:background .3s;position:relative}
+.card:hover{background:var(--ivory)}
+.card .swatch{width:34px;height:4px;margin-bottom:22px}
+.card h3{font-family:var(--font-display);font-size:27px;font-weight:600;color:var(--ink);line-height:1.1}
+.card .tag{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin:8px 0 16px}
+.card .desc{font-size:13.5px;color:var(--muted);flex:1}
+.card .photo{height:420px;margin:20px -12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(175deg,var(--ivory),#F3F0E8);border:1px solid var(--hair);overflow:hidden;cursor:pointer}
+.card .photo img{max-height:100%;max-width:100%;object-fit:contain;transition:transform .45s ease}
+.card:hover .photo img{transform:scale(1.045)}
+.card .row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--hair);padding-top:18px;margin-top:4px}
+.price{font-family:var(--font-display);font-size:24px;font-weight:600;color:var(--green)}
+.price small{font-size:10px;font-family:var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;font-weight:400}
+.add{background:none;border:1px solid var(--gold);color:var(--gold);padding:9px 18px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;transition:.25s}
+.add:hover{background:var(--gold);color:#fff}
+.view-link{margin-top:14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);background:none;border:none;text-align:left;padding:0;border-bottom:1px solid var(--gold);align-self:flex-start;padding-bottom:2px}
+
+.heritage{background:var(--ivory);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.heritage-in{max-width:1240px;margin:auto;padding:96px 32px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.heritage h2{font-family:var(--font-display);font-weight:500;font-size:clamp(30px,3.2vw,44px);line-height:1.15;margin:16px 0 20px}
+.heritage p{color:var(--muted);font-size:15px;margin-bottom:14px}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair);border:1px solid var(--hair)}
+.pillar{background:var(--white);padding:30px 26px}
+.pillar b{font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--green);display:block;margin-bottom:8px}
+.pillar span{font-size:12.5px;color:var(--muted)}
+
+.overlay{position:fixed;inset:0;background:rgba(20,25,20,.55);backdrop-filter:blur(4px);z-index:90;display:none;align-items:center;justify-content:center;padding:24px}
+.overlay.open{display:flex}
+.modal{background:var(--white);max-width:960px;width:100%;max-height:88vh;overflow-y:auto;position:relative;border-top:5px solid var(--green)}
+.modal-close{position:sticky;top:0;float:right;margin:16px 16px 0 0;background:var(--white);border:1px solid var(--hair);width:38px;height:38px;font-size:16px;color:var(--ink);z-index:5}
+.modal-in{padding:48px 52px 56px;display:grid;grid-template-columns:1fr 1.3fr;gap:48px}
+.modal .stage{background:linear-gradient(175deg,var(--ivory),#F2EFE6);border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;min-height:480px;padding:26px;position:sticky;top:0;align-self:start}
+.modal .stage img{max-width:100%;max-height:74vh;object-fit:contain;box-shadow:0 20px 46px rgba(20,41,31,.2)}
+.modal h2{font-family:var(--font-display);font-weight:600;font-size:38px;line-height:1.05;color:var(--ink)}
+.modal .m-tag{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin:10px 0 18px}
+.modal .m-desc{font-size:14.5px;color:var(--muted)}
+.spec-block{margin-top:26px}
+.spec-block h4{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--green);font-weight:500;border-bottom:1px solid var(--hair);padding-bottom:8px;margin-bottom:12px}
+.benefits li{font-size:13.5px;color:var(--ink);margin:7px 0;list-style:none;padding-left:20px;position:relative}
+.benefits li::before{content:"✦";position:absolute;left:0;color:var(--gold);font-size:10px;top:4px}
+.ing-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.ing-table td{padding:6px 4px;border-bottom:1px dotted var(--hair);color:var(--muted)}
+.ing-table td:last-child{text-align:right;color:var(--ink);font-weight:400;white-space:nowrap}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair);border:1px solid var(--hair);margin-top:26px}
+.meta{background:var(--ivory);padding:16px 18px}
+.meta span{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block}
+.meta b{font-size:13.5px;font-weight:500;color:var(--ink)}
+.caution{margin-top:20px;font-size:11.5px;color:var(--muted);border-left:2px solid var(--gold);padding-left:14px;font-style:italic}
+.modal-buy{display:flex;align-items:center;justify-content:space-between;margin-top:30px;border-top:1px solid var(--hair);padding-top:22px;gap:16px;flex-wrap:wrap}
+.modal .price{font-size:32px}
+
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(460px,100%);background:var(--white);z-index:100;transform:translateX(105%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-18px 0 50px rgba(20,30,20,.18);border-left:1px solid var(--hair)}
+.drawer.open{transform:none}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:26px 30px;border-bottom:1px solid var(--hair)}
+.drawer-head h3{font-family:var(--font-display);font-size:26px;font-weight:600;color:var(--green)}
+.drawer-body{flex:1;overflow-y:auto;padding:10px 30px}
+.ci{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--hair);align-items:center}
+.ci img{width:52px;height:70px;object-fit:contain;background:var(--ivory);border:1px solid var(--hair)}
+.ci-info{flex:1}
+.ci-info b{font-family:var(--font-display);font-size:18px;font-weight:600;display:block;line-height:1.1}
+.ci-info span{font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.qty{display:flex;align-items:center;border:1px solid var(--hair)}
+.qty button{width:28px;height:28px;background:none;border:none;font-size:14px;color:var(--green)}
+.qty span{min-width:26px;text-align:center;font-size:13px}
+.ci-price{font-family:var(--font-display);font-weight:600;font-size:17px;min-width:64px;text-align:right}
+.ci-remove{background:none;border:none;color:var(--muted);font-size:15px;padding:4px}
+.drawer-foot{border-top:1px solid var(--hair);padding:24px 30px 30px;background:var(--ivory)}
+.total-row{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px}
+.total-row.grand{font-size:16px;color:var(--ink);font-weight:500;margin:10px 0 18px;border-top:1px solid var(--hair);padding-top:12px}
+.total-row.grand b{font-family:var(--font-display);font-size:24px;color:var(--green)}
+.drawer .btn{width:100%;text-align:center;border:1px solid var(--green)}
+.empty-cart{text-align:center;padding:70px 20px;color:var(--muted)}
+.empty-cart .serif{font-size:26px;color:var(--green);display:block;margin-bottom:8px}
+.free-note{font-size:11px;text-align:center;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:14px}
+
+/* checkout form inside drawer */
+.co-form label{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+.co-form input,.co-form textarea{width:100%;border:1px solid var(--hair);background:var(--white);padding:12px 14px;font-size:14px;font-weight:300;color:var(--ink)}
+.co-form input:focus,.co-form textarea:focus{outline:none;border-color:var(--gold)}
+.co-form textarea{resize:vertical;min-height:74px}
+.co-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pay-box{margin-top:18px;border:1px solid var(--gold);background:var(--ivory);padding:14px 16px;font-size:13px;display:flex;justify-content:space-between;align-items:center}
+.pay-box b{font-weight:500}
+.pay-box span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.form-errors{margin-top:14px;font-size:12.5px;color:#8C2B2B;border-left:2px solid #8C2B2B;padding-left:12px;display:none}
+.back-link{background:none;border:none;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding:0;margin-bottom:6px}
+/* confirmation */
+.confirm{text-align:center;padding:60px 24px}
+.confirm .big{font-family:var(--font-display);font-size:34px;font-weight:600;color:var(--green);margin:14px 0 8px}
+.confirm .oid{display:inline-block;border:1px solid var(--gold);color:var(--gold);letter-spacing:.2em;padding:8px 20px;font-size:13px;margin:14px 0 18px}
+.confirm p{font-size:13.5px;color:var(--muted)}
+
+.toast{position:fixed;bottom:28px;left:50%;transform:translate(-50%,20px);background:var(--green-deep);color:#F0EBDD;padding:13px 30px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:0;transition:.35s;z-index:120;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+.assure{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair)}
+.assure div{background:var(--white);padding:34px 28px;text-align:center}
+.assure .glyph{font-family:var(--font-display);font-size:30px;color:var(--gold);display:block;margin-bottom:10px}
+.assure b{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;display:block;margin-bottom:6px}
+.assure span{font-size:12px;color:var(--muted)}
+
+/* track */
+.track{max-width:640px;margin:0 auto;text-align:center}
+.track-form{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap;justify-content:center}
+.track-form input{border:1px solid var(--hair);padding:13px 16px;font-size:14px;min-width:200px;flex:1}
+.track-form input:focus{outline:none;border-color:var(--gold)}
+.track-result{margin-top:26px;font-size:14px}
+.status-pill{display:inline-block;padding:5px 16px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold)}
+
+footer{background:var(--green-deep);color:#CFC9B8;margin-top:96px}
+.foot-in{max-width:1240px;margin:auto;padding:72px 32px 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:56px}
+footer h5{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:16px;font-weight:500}
+footer p, footer li{font-size:13px;list-style:none;margin-bottom:8px}
+.foot-logo{font-family:var(--font-display);font-size:30px;font-weight:600;letter-spacing:.12em;color:#F2EDDF;margin-bottom:10px}
+.foot-bottom{border-top:1px solid rgba(201,169,106,.25);text-align:center;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:20px;color:#8F9585}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding-top:56px}
+  .alcove{height:480px}
+  .heritage-in{grid-template-columns:1fr;gap:44px}
+  .modal-in{grid-template-columns:1fr;padding:36px 26px 44px}
+  .modal .stage{position:static;min-height:300px}
+  .assure{grid-template-columns:1fr 1fr}
+  .foot-in{grid-template-columns:1fr;gap:36px}
+  .nav-links{display:none}
+}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<div class="announce">Free shipping on orders above ₹499 &nbsp;·&nbsp; <b>GMP Certified</b> &nbsp;·&nbsp; ISO 9001:2025 &nbsp;·&nbsp; Cash on Delivery available</div>
+
+<nav>
+  <div class="nav-in">
+    <a href="#" class="logo">
+      <span class="logo-mark">ORIOZEN</span>
+      <span class="logo-sub">Healthcare</span>
+    </a>
+    <div class="nav-links">
+      <a href="#shop">Shop</a>
+      <a href="#heritage">Our Heritage</a>
+      <a href="#track">Track Order</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="cart-btn" onclick="openCart()">Cart <span class="cart-count" id="cartCount">0</span></button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <span class="eyebrow">100% Ayurvedic &amp; Natural · Est. Mumbai</span>
+    <h1>Ancient formulas, <em>held to a modern standard.</em></h1>
+    <p>Oriozen crafts classical Ayurvedic proprietary medicines — from Shilajit and Swarn Bhasma to time-honoured herbal extracts — in GMP-certified facilities. Pure ingredients, precise dosing, nothing artificial.</p>
+    <div class="hero-cta">
+      <a href="#shop" class="btn">Shop the Collection</a>
+      <a href="#heritage" class="btn ghost">Our Philosophy</a>
+    </div>
+    <div class="hero-cred">
+      <div class="cred"><b>GMP</b><span>Certified Company</span></div>
+      <div class="cred"><b>ISO 9001</b><span>:2025 Certified</span></div>
+      <div class="cred"><b>60+</b><span>Botanical Extracts</span></div>
+      <div class="cred"><b>COD</b><span>Pay on Delivery</span></div>
+    </div>
+  </div>
+  <div class="alcove">
+    <img class="alcove-img" src="/static/img/xpower.jpg" alt="Orio X-Power — Natural Energy for Men, with Shilajit & Swarn Bhasmi">
+  </div>
+</header>
+
+<div class="strip" aria-hidden="true">
+  <div class="strip-track" id="stripTrack">
+    <span>Shilajit</span><span>Swarn Bhasma</span><span>Ashwagandha</span><span>Shatavari</span><span>Giloy</span><span>Amla</span><span>Gokshura</span><span>Punarnava</span><span>Kutki</span><span>Lodhra</span><span>Kumari</span><span>Pashanbhed</span>
+  </div>
+</div>
+
+<section id="shop">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">The Collection</span>
+      <h2>Five formulations.<br>One standard of purity.</h2>
+    </div>
+    <p>Every capsule is an Ayurvedic proprietary medicine, manufactured under Mfg. Lic. No. 649 PB (AY), packed in batches of 30.</p>
+  </div>
+  <div class="grid" id="productGrid"><p style="padding:40px;color:var(--muted)">Loading the collection…</p></div>
+</section>
+
+<div class="heritage" id="heritage">
+  <div class="heritage-in">
+    <div>
+      <span class="eyebrow">Our Philosophy</span>
+      <h2>Sourced from the pharmacopoeia, not the trend cycle.</h2>
+      <p>Each Oriozen formulation begins with the classical texts — Crocus sativus, Withania somnifera, Bergenia ciliata — and ends in a modern GMP-certified facility in Badesha Kalan, India, where every extract is standardised to the milligram.</p>
+      <p>We publish the full composition of every capsule on the label. No proprietary blends hiding behind vague totals, no fillers dressed up as actives.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><b>Full-label honesty</b><span>Every ingredient declared with its exact mg per capsule.</span></div>
+      <div class="pillar"><b>Classical sourcing</b><span>Herbs, bhasmas and mineral pitch prepared by traditional method.</span></div>
+      <div class="pillar"><b>Certified facilities</b><span>GMP certified · ISO 9001:2025 · Mfg. Lic. 649 PB (AY).</span></div>
+      <div class="pillar"><b>Physician-guided</b><span>Dosage designed to be taken under medical supervision.</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="assurance">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">Assurance</span>
+      <h2>Why India trusts Oriozen</h2>
+    </div>
+  </div>
+  <div class="assure">
+    <div><span class="glyph">✦</span><b>100% Ayurvedic</b><span>Natural formulations, free of synthetic actives.</span></div>
+    <div><span class="glyph">❋</span><b>No Side Effects</b><span>Gentle herbal extracts, safe for daily use as directed.</span></div>
+    <div><span class="glyph">◈</span><b>Safe &amp; Effective</b><span>GMP-certified manufacturing, batch-tested quality.</span></div>
+    <div><span class="glyph">✧</span><b>Trusted Quality</b><span>ISO 9001:2025 certified company standards.</span></div>
+  </div>
+</section>
+
+<section id="track">
+  <div class="track">
+    <span class="eyebrow">Track Order</span>
+    <h2 class="serif" style="font-weight:500;font-size:clamp(28px,3vw,40px);margin-top:12px">Where is my order?</h2>
+    <div class="track-form">
+      <input id="trackId" placeholder="Order ID · e.g. OZ-260709-4F7K" aria-label="Order ID">
+      <input id="trackPhone" placeholder="Mobile number used at checkout" aria-label="Phone number" inputmode="numeric">
+      <button class="btn" onclick="trackOrder()">Track</button>
+    </div>
+    <div class="track-result" id="trackResult"></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="foot-in">
+    <div>
+      <div class="foot-logo">ORIOZEN</div>
+      <p>An Ayurvedic apothecary for the modern household. 100% Ayurvedic &amp; Natural.</p>
+      <p style="margin-top:14px;font-size:12px">Marketed by <b style="color:#F2EDDF">Oriozen Healthcare</b><br>A-30 Worly, Mumbai<br>oriozenhealthcare@gmail.com</p>
+    </div>
+    <div>
+      <h5>Manufactured by</h5>
+      <p>Sampuranh Herbal India,<br>Badesha Kalan, India</p>
+      <p style="margin-top:12px">Mfg. Lic. No. 649 PB (AY)<br>An Ayurvedic Proprietary Medicine</p>
+    </div>
+    <div>
+      <h5>The Collection</h5>
+      <ul id="footLinks"></ul>
+    </div>
+  </div>
+  <div class="foot-bottom">© 2026 Oriozen Healthcare · To be taken under medical supervision · GMP &amp; ISO 9001:2025 Certified</div>
+</footer>
+
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+    <div class="modal-in" id="modalContent"></div>
+  </div>
+</div>
+
+<aside class="drawer" id="drawer" aria-label="Shopping cart">
+  <div class="drawer-head">
+    <h3 id="drawerTitle">Your Cart</h3>
+    <button class="modal-close" style="float:none;margin:0" onclick="closeCart()" aria-label="Close cart">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot" id="drawerFoot"></div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const FREE_ABOVE = 499, SHIP = 49;
+let products = [];
+const cart = {};           // id -> qty
+let drawerMode = "cart";   // cart | checkout | confirm
+const fmt = n => "₹" + n.toLocaleString("en-IN");
+const byId = id => products.find(p => p.id === id);
+
+/* ── load catalog from the backend ── */
+async function loadProducts(){
+  try{
+    const r = await fetch("/api/products");
+    products = await r.json();
+    renderProducts();
+  }catch(e){
+    document.getElementById("productGrid").innerHTML =
+      '<p style="padding:40px;color:var(--muted)">Could not load the collection. Is the server running?</p>';
+  }
+}
+
+function renderProducts(){
+  document.getElementById("productGrid").innerHTML = products.map(p => `
+    <article class="card">
+      <div class="swatch" style="background:${p.accent}"></div>
+      <h3>${p.name}</h3>
+      <div class="tag">${p.tag}</div>
+      <div class="photo" onclick="openModal('${p.id}')" role="button" tabindex="0" aria-label="View ${p.name} details">
+        <img src="${p.img}" alt="${p.name} — ${p.tag}" loading="lazy">
+      </div>
+      <p class="desc">${p.short}</p>
+      <button class="view-link" onclick="openModal('${p.id}')">Full specification →</button>
+      <div class="row">
+        <div class="price">${fmt(p.price)}<small>${p.pack} · Incl. taxes</small></div>
+        <button class="add" onclick="addToCart('${p.id}')">Add to cart</button>
+      </div>
+    </article>`).join("");
+  document.getElementById("footLinks").innerHTML =
+    products.map(p=>`<li><a href="#shop" onclick="openModal('${p.id}')" style="cursor:pointer">${p.name} — ${fmt(p.price)}</a></li>`).join("");
+}
+
+/* ── product modal ── */
+function openModal(id){
+  const p = byId(id);
+  if(!p) return;
+  document.getElementById("modalContent").innerHTML = `
+    <div class="stage"><img src="${p.img}" alt="${p.name} full product label"></div>
+    <div>
+      <span class="eyebrow">100% Ayurvedic &amp; Natural</span>
+      <h2 style="margin-top:10px">${p.name}</h2>
+      <div class="m-tag">${p.tag}</div>
+      <p class="m-desc">${p.long}</p>
+      <div class="spec-block"><h4>Key Benefits</h4>
+        <ul class="benefits">${p.benefits.map(b=>`<li>${b}</li>`).join("")}</ul></div>
+      <div class="spec-block"><h4>Composition — each capsule contains extract of</h4>
+        <table class="ing-table">${p.ingredients.map(i=>`<tr><td>${i[0]}</td><td>${i[1]||"—"}</td></tr>`).join("")}</table></div>
+      <div class="spec-block"><h4>Indications</h4><p class="m-desc">${p.indications}</p></div>
+      <div class="meta-grid">
+        <div class="meta"><span>Pack size</span><b>${p.pack}</b></div>
+        <div class="meta"><span>Dosage</span><b>${p.dosage}</b></div>
+        <div class="meta"><span>Certifications</span><b>GMP · ISO 9001:2025</b></div>
+        <div class="meta"><span>Form</span><b>Ayurvedic Proprietary Medicine</b></div>
+      </div>
+      <p class="caution">${p.caution}</p>
+      <div class="modal-buy">
+        <div class="price">${fmt(p.price)}<small>M.R.P. · Incl. of all taxes</small></div>
+        <button class="btn" onclick="addToCart('${p.id}');closeModal();openCart()">Add to Cart</button>
+      </div>
+    </div>`;
+  document.getElementById("overlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeModal(){
+  document.getElementById("overlay").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+/* ── cart ── */
+function addToCart(id){
+  cart[id]=(cart[id]||0)+1;
+  drawerMode="cart"; renderDrawer();
+  showToast(byId(id).name + " added to cart");
+}
+function changeQty(id,d){ cart[id]=(cart[id]||0)+d; if(cart[id]<=0) delete cart[id]; renderDrawer(); }
+function removeItem(id){ delete cart[id]; renderDrawer(); }
+function cartCount(){ return Object.values(cart).reduce((s,q)=>s+q,0); }
+function subtotal(){ return Object.keys(cart).reduce((s,id)=>s+cart[id]*byId(id).price,0); }
+
+function openCart(){ document.getElementById("drawer").classList.add("open"); renderDrawer(); }
+function closeCart(){ document.getElementById("drawer").classList.remove("open"); if(drawerMode!=="confirm") drawerMode="cart"; }
+
+function renderDrawer(){
+  document.getElementById("cartCount").textContent = cartCount();
+  const body = document.getElementById("drawerBody");
+  const foot = document.getElementById("drawerFoot");
+  const title = document.getElementById("drawerTitle");
+
+  if(drawerMode==="confirm") return;            // confirmation stays until closed
+
+  if(drawerMode==="checkout"){ renderCheckout(); return; }
+
+  title.textContent = "Your Cart";
+  const ids = Object.keys(cart);
+  if(!ids.length){
+    body.innerHTML = `<div class="empty-cart"><span class="serif">Your cart is empty</span>Add a formulation from the collection to begin.</div>`;
+    foot.innerHTML = `<a href="#shop" class="btn ghost" onclick="closeCart()" style="display:block;text-align:center">Browse the Collection</a>`;
+    return;
+  }
+  body.innerHTML = ids.map(id=>{
+    const p = byId(id);
+    return `<div class="ci">
+      <img src="${p.img}" alt="">
+      <div class="ci-info"><b>${p.name}</b><span>${p.pack}</span></div>
+      <div class="qty">
+        <button onclick="changeQty('${id}',-1)" aria-label="Decrease">−</button>
+        <span>${cart[id]}</span>
+        <button onclick="changeQty('${id}',1)" aria-label="Increase">+</button>
+      </div>
+      <div class="ci-price">${fmt(p.price*cart[id])}</div>
+      <button class="ci-remove" onclick="removeItem('${id}')" aria-label="Remove">✕</button>
+    </div>`;
+  }).join("");
+  const sub = subtotal(), ship = sub>=FREE_ABOVE?0:SHIP;
+  foot.innerHTML = `
+    <div class="total-row"><span>Subtotal</span><span>${fmt(sub)}</span></div>
+    <div class="total-row"><span>Shipping</span><span>${ship===0?"Free":fmt(ship)}</span></div>
+    <div class="total-row grand"><span>Total</span><b>${fmt(sub+ship)}</b></div>
+    <button class="btn" onclick="drawerMode='checkout';renderDrawer()">Proceed to Checkout</button>
+    <div class="free-note">${sub>=FREE_ABOVE?"✦ You've unlocked free shipping":"Free shipping above ₹499"}</div>`;
+}
+
+/* ── checkout ── */
+function renderCheckout(){
+  document.getElementById("drawerTitle").textContent = "Checkout";
+  const sub = subtotal(), ship = sub>=FREE_ABOVE?0:SHIP;
+  document.getElementById("drawerBody").innerHTML = `
+    <button class="back-link" onclick="drawerMode='cart';renderDrawer()">← Back to cart</button>
+    <form class="co-form" id="coForm" onsubmit="return false">
+      <label for="coName">Full name</label>
+      <input id="coName" autocomplete="name" required>
+      <div class="co-row">
+        <div>
+          <label for="coPhone">Mobile number</label>
+          <input id="coPhone" autocomplete="tel" inputmode="numeric" maxlength="10" required>
+        </div>
+        <div>
+          <label for="coEmail">Email (optional)</label>
+          <input id="coEmail" autocomplete="email" type="email">
+        </div>
+      </div>
+      <label for="coAddress">Delivery address</label>
+      <textarea id="coAddress" autocomplete="street-address" required></textarea>
+      <div class="co-row">
+        <div>
+          <label for="coCity">City</label>
+          <input id="coCity" autocomplete="address-level2" required>
+        </div>
+        <div>
+          <label for="coPin">PIN code</label>
+          <input id="coPin" autocomplete="postal-code" inputmode="numeric" maxlength="6" required>
+        </div>
+      </div>
+      <div class="pay-box"><b>Cash on Delivery</b><span>Pay when it arrives</span></div>
+      <div class="form-errors" id="coErrors"></div>
+    </form>`;
+  document.getElementById("drawerFoot").innerHTML = `
+    <div class="total-row"><span>Subtotal</span><span>${fmt(sub)}</span></div>
+    <div class="total-row"><span>Shipping</span><span>${ship===0?"Free":fmt(ship)}</span></div>
+    <div class="total-row grand"><span>To pay on delivery</span><b>${fmt(sub+ship)}</b></div>
+    <button class="btn" id="placeBtn" onclick="placeOrder()">Place Order</button>`;
+}
+
+async function placeOrder(){
+  const btn = document.getElementById("placeBtn");
+  const errBox = document.getElementById("coErrors");
+  btn.disabled = true; btn.textContent = "Placing order…";
+  errBox.style.display = "none";
+  const payload = {
+    customer:{
+      name: document.getElementById("coName").value,
+      phone: document.getElementById("coPhone").value,
+      email: document.getElementById("coEmail").value,
+      address: document.getElementById("coAddress").value,
+      city: document.getElementById("coCity").value,
+      pincode: document.getElementById("coPin").value
+    },
+    payment:"cod",
+    items: Object.keys(cart).map(id=>({id, qty:cart[id]}))
+  };
+  try{
+    const r = await fetch("/api/orders",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+    const data = await r.json();
+    if(!r.ok || !data.ok){
+      errBox.innerHTML = (data.errors||["Something went wrong. Please try again."]).join("<br>");
+      errBox.style.display = "block";
+      btn.disabled = false; btn.textContent = "Place Order";
+      return;
+    }
+    Object.keys(cart).forEach(k=>delete cart[k]);
+    drawerMode = "confirm";
+    document.getElementById("cartCount").textContent = "0";
+    document.getElementById("drawerTitle").textContent = "Order Placed";
+    document.getElementById("drawerBody").innerHTML = `
+      <div class="confirm">
+        <span class="eyebrow">Thank you</span>
+        <div class="big">Your order is confirmed</div>
+        <div class="oid">${data.order.id}</div>
+        <p>Save this order ID — you can track your delivery any time in the <b>Track Order</b> section using it and your mobile number.</p>
+        <p style="margin-top:10px">Amount to pay on delivery: <b>${fmt(data.order.total)}</b></p>
+      </div>`;
+    document.getElementById("drawerFoot").innerHTML =
+      `<button class="btn" onclick="drawerMode='cart';closeCart()">Continue Shopping</button>`;
+  }catch(e){
+    errBox.textContent = "Could not reach the server. Please try again.";
+    errBox.style.display = "block";
+    btn.disabled = false; btn.textContent = "Place Order";
+  }
+}
+
+/* ── tracking ── */
+async function trackOrder(){
+  const id = document.getElementById("trackId").value.trim();
+  const phone = document.getElementById("trackPhone").value.trim();
+  const box = document.getElementById("trackResult");
+  if(!id || !phone){ box.innerHTML = '<span style="color:var(--muted)">Enter your order ID and mobile number.</span>'; return; }
+  box.innerHTML = '<span style="color:var(--muted)">Checking…</span>';
+  try{
+    const r = await fetch(`/api/orders/${encodeURIComponent(id)}/track?phone=${encodeURIComponent(phone)}`);
+    const data = await r.json();
+    if(!r.ok || !data.ok){ box.innerHTML = `<span style="color:#8C2B2B">${data.error||"No order found."}</span>`; return; }
+    const o = data.order;
+    box.innerHTML = `
+      <p class="serif" style="font-size:22px;font-weight:600;color:var(--green)">${o.id}</p>
+      <p style="margin:8px 0 12px">${o.items.map(i=>`${i.name} × ${i.qty}`).join(" · ")} — ${fmt(o.total)}</p>
+      <span class="status-pill">${o.status}</span>`;
+  }catch(e){
+    box.innerHTML = '<span style="color:#8C2B2B">Could not reach the server.</span>';
+  }
+}
+
+let toastTimer;
+function showToast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove("show"), 2400);
+}
+
+const track = document.getElementById("stripTrack");
+track.innerHTML += track.innerHTML;
+document.addEventListener("keydown", e=>{ if(e.key==="Escape"){ closeModal(); closeCart(); } });
+loadProducts();
+</script>
+</body>
+</html>

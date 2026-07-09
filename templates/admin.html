@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oriozen — Order Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--white:#fff;--ivory:#FBFAF7;--ink:#20241F;--green:#1E3A2F;--green-deep:#14291F;--gold:#B08D4F;--hair:#E9E5DC;--muted:#6E6F68}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Archivo',sans-serif;font-weight:300;background:var(--ivory);color:var(--ink);line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+header{background:var(--green-deep);color:#EDE7D8;padding:22px 36px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+header .brand{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;letter-spacing:.14em}
+header .brand small{font-size:10px;letter-spacing:.3em;color:var(--gold);display:block;font-family:'Archivo'}
+.keybox{display:flex;gap:10px}
+.keybox input{border:1px solid rgba(201,169,106,.4);background:rgba(255,255,255,.06);color:#fff;padding:10px 14px;font-size:13px;min-width:220px}
+.keybox button{background:var(--gold);border:none;color:#fff;padding:10px 22px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}
+main{max-width:1240px;margin:auto;padding:36px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);margin-bottom:32px}
+.stat{background:var(--white);padding:24px 26px}
+.stat span{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:var(--green)}
+.order{background:var(--white);border:1px solid var(--hair);margin-bottom:14px;padding:22px 26px}
+.o-top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.o-id{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--green)}
+.o-date{font-size:11px;color:var(--muted);letter-spacing:.08em}
+.o-body{display:grid;grid-template-columns:1.2fr 1fr .8fr;gap:24px;margin-top:14px;padding-top:14px;border-top:1px solid var(--hair)}
+.o-body h5{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-weight:500}
+.o-body p, .o-body li{font-size:13px;list-style:none}
+.o-total{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600}
+.pill{display:inline-block;padding:4px 14px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold)}
+.pill.delivered{border-color:var(--green);color:var(--green)}
+.pill.cancelled{border-color:#8C2B2B;color:#8C2B2B}
+.actions{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.actions button{background:none;border:1px solid var(--hair);padding:7px 16px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;color:var(--ink);transition:.2s}
+.actions button:hover{border-color:var(--green);color:var(--green)}
+.actions button.danger:hover{border-color:#8C2B2B;color:#8C2B2B}
+.empty,.locked{text-align:center;padding:90px 20px;color:var(--muted)}
+.empty .serif,.locked .serif{font-size:28px;color:var(--green);display:block;margin-bottom:8px}
+.refresh{background:none;border:1px solid var(--green);color:var(--green);padding:9px 22px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;margin-bottom:22px}
+@media(max-width:760px){.o-body{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">ORIOZEN<small>Order Dashboard</small></div>
+  <div class="keybox">
+    <input id="key" type="password" placeholder="Admin key" onkeydown="if(event.key==='Enter')load()">
+    <button onclick="load()">Unlock</button>
+  </div>
+</header>
+<main>
+  <div id="content"><div class="locked"><span class="serif">Dashboard locked</span>Enter your admin key above to view orders.</div></div>
+</main>
+<script>
+const fmt = n => "₹" + Number(n).toLocaleString("en-IN");
+let KEY = "";
+
+async function load(){
+  KEY = document.getElementById("key").value.trim();
+  const box = document.getElementById("content");
+  box.innerHTML = '<div class="locked">Loading…</div>';
+  try{
+    const r = await fetch("/api/admin/orders",{headers:{"X-Admin-Key":KEY}});
+    if(r.status===401){ box.innerHTML = '<div class="locked"><span class="serif">Invalid key</span>Check the admin key and try again.</div>'; return; }
+    const data = await r.json();
+    render(data);
+  }catch(e){
+    box.innerHTML = '<div class="locked">Could not reach the server.</div>';
+  }
+}
+
+function render(data){
+  const s = data.summary;
+  let html = `
+    <button class="refresh" onclick="load()">↻ Refresh</button>
+    <div class="stats">
+      <div class="stat"><span>Total orders</span><b>${s.orders}</b></div>
+      <div class="stat"><span>Pending (new + confirmed)</span><b>${s.pending}</b></div>
+      <div class="stat"><span>Revenue (excl. cancelled)</span><b>${fmt(s.revenue_all)}</b></div>
+      <div class="stat"><span>Revenue (delivered)</span><b>${fmt(s.revenue_delivered)}</b></div>
+    </div>`;
+  if(!data.orders.length){
+    html += '<div class="empty"><span class="serif">No orders yet</span>New orders will appear here the moment they are placed.</div>';
+  }
+  html += data.orders.map(o=>`
+    <div class="order">
+      <div class="o-top">
+        <div><span class="o-id">${o.id}</span> &nbsp; <span class="pill ${o.status}">${o.status}</span></div>
+        <div class="o-date">${new Date(o.created_at).toLocaleString("en-IN")}</div>
+      </div>
+      <div class="o-body">
+        <div>
+          <h5>Customer</h5>
+          <p><b style="font-weight:500">${esc(o.name)}</b> · ${esc(o.phone)}${o.email?" · "+esc(o.email):""}</p>
+          <p>${esc(o.address)}, ${esc(o.city)} — ${esc(o.pincode)}</p>
+        </div>
+        <div>
+          <h5>Items</h5>
+          <ul>${o.items.map(i=>`<li>${esc(i.name)} × ${i.qty} — ${fmt(i.price*i.qty)}</li>`).join("")}</ul>
+        </div>
+        <div>
+          <h5>Payment · ${o.payment.toUpperCase()}</h5>
+          <p>Subtotal ${fmt(o.subtotal)} · Shipping ${o.shipping? fmt(o.shipping):"Free"}</p>
+          <p class="o-total">${fmt(o.total)}</p>
+        </div>
+      </div>
+      <div class="actions">
+        ${["confirmed","shipped","delivered"].map(st=>`<button onclick="setStatus('${o.id}','${st}')">Mark ${st}</button>`).join("")}
+        <button class="danger" onclick="setStatus('${o.id}','cancelled')">Cancel</button>
+      </div>
+    </div>`).join("");
+  document.getElementById("content").innerHTML = html;
+}
+
+function esc(s){ const d=document.createElement("div"); d.textContent=s??""; return d.innerHTML; }
+
+async function setStatus(id, status){
+  await fetch(`/api/admin/orders/${encodeURIComponent(id)}`,{
+    method:"PATCH",
+    headers:{"Content-Type":"application/json","X-Admin-Key":KEY},
+    body:JSON.stringify({status})
+  });
+  load();
+}
+</script>
+</body>
+</html>
